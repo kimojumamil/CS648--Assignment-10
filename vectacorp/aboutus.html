@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to Vecta Corp.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function() {
+            // Tooltip for menu items
+            $('#responsive-menu li a').each(function() {
+                let descriptions = {
+                    "Home": "Learn more about our company and solutions.",
+                    "About Us": "Meet our team and learn our story.",
+                    "Solutions": "Explore our customer-centric business solutions.",
+                    "Support": "Access technical resources and support options.",
+                    "Contact Us": "Get in touch with us for inquiries or feedback."
+                };
+                $(this).attr('title', descriptions[$(this).text()]);
+            }).tooltip();
+
+            // Tabs for Management Team
+            $("#tabs-vertical").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+            $("#tabs-vertical li").removeClass("ui-corner-top").addClass("ui-corner-left");
+
+            // Cycle 2 for Slideshow
+            $('#slideshow').cycle({
+                fx: 'fade',
+                pause: 1,
+                next: '.cycle-next',
+                prev: '.cycle-prev'
+            });
+        });
+    </script>
+</head>
+<body>
+    <main class="container">
+        <figure class="three columns">
+            <img src="images/logo.gif" class="scale-with-grid" alt="">
+        </figure>
+        
+        <nav class="thirteen columns">
+            <ul id="responsive-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        
+        <header class="sixteen columns">
+            <img src="images/header.gif" class="scale-with-grid" alt="">
+        </header>
+        
+        <section id="welcome" class="eleven columns">
+            <h4>About Us</h4>
+            <p>With innovative approaches and advanced methodologies...</p>
+            
+            <h4>Management Team</h4>
+            <div id="tabs-vertical">
+                <ul>
+                    <li><a href="#manager-1">Manager 1</a></li>
+                    <li><a href="#manager-2">Manager 2</a></li>
+                    <!-- Add more tabs -->
+                </ul>
+                <div id="manager-1">Bio for Manager 1</div>
+                <div id="manager-2">Bio for Manager 2</div>
+            </div>
+            
+            <h4>Our New Headquarters</h4>
+            <div id="slideshow">
+                <img src="images/hq1.jpg" alt="Headquarters 1">
+                <img src="images/hq2.jpg" alt="Headquarters 2">
+            </div>
+        </section>
+        
+        <section id="testimonials" class="five columns">
+            <h4>Careers</h4>
+            <p>We are always looking for educated and motivated people...</p>
+        </section>
+    </main>
+</body>
+</html>
